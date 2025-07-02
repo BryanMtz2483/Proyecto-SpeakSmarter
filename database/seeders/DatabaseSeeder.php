@@ -13,6 +13,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(LevelSeeder::class);
+        //Mandamos llamar a todos los seeders para cargar todas las migraciones para niveles, reoles y usuarios con roles asignados
+        $this->call([
+            LevelSeeder::class,
+            RoleSeeder::class,
+            UserSeeder::class
+    ]);
     }
 }
